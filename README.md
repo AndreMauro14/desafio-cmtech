@@ -1,126 +1,125 @@
-# Teste prático para desenvolvedores
+# Teste prÃ¡tico para desenvolvedores
 
 <img src="https://www.cmtech.com.br/site/2021/wp-content/themes/cmtech/assets/img/brand_cmtech.svg" alt="CMTECH">
 <img src="https://mexx.ai/wp-content/uploads/2021/12/Logo-MEXX.png" width="245" height="86" alt="Mexx">
 
 
-<!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
+<!---Esses sÃ£o exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. VocÃª pode querer incluir dependÃªncias, status do projeto e informaÃ§Ãµes de licenÃ§a aqui--->
 
-> Teste prático CMTECH para novos colaboradores. Fique atento para o seu perfil, estágio ou CLT. Estágio deve ficar apenas nos requisitos da seção "?? Estágio".
+> Teste prÃ¡tico CMTECH para novos colaboradores. Fique atento para o seu perfil, estÃ¡gio ou CLT. EstÃ¡gio deve ficar apenas nos requisitos da seÃ§Ã£o "ğŸ’» EstÃ¡gio".
 
-### História do usuário
+### HistÃ³ria do usuÃ¡rio
 
 O teste se baseia nos seguintes requisitos abaixo, a depender do perfil:
 
 - [ ] Login no sistema
-- [ ] CRUD de produtos
-- [ ] Realizar venda
-- [ ] Relatório
-- [ ] CRUD de usuários
+- [ ] CRUD de usuÃ¡rios
+- [ ] Excluir UsuÃ¡rio
+- [ ] CRUD de contatos(melhorias)
 
-## ?? Estágio
+## ğŸ’» EstÃ¡gio
 
-Esta é um exercício para testar seus conhecimentos básicos de PHP, MySQL e padrões de projeto. Sua tarefa consiste em:
+Esta Ã© um exercÃ­cio para testar seus conhecimentos bÃ¡sicos de PHP, MySQL e padrÃµes de projeto. Sua tarefa consiste em:
 
-Criar uma tabela de usuários no banco de dados;
-A tabela deve conter NOME, EMAIL, SENHA, ATIVO, DATA DE CRIAÇÃO e DATA DE ATUALIZAÇÃO;
-Você deverá fazer o CRUD (Create, Read, Update e Delete) dessa tabela em questão;
+Criar uma tabela de usuÃ¡rios no banco de dados;
+A tabela deve conter NOME, EMAIL, SENHA, ATIVO, DATA DE CRIAÃ‡ÃƒO e DATA DE ATUALIZAÃ‡ÃƒO;
+VocÃª deverÃ¡ fazer o CRUD (Create, Read, Update e Delete) dessa tabela em questÃ£o;
 
-Observe que já tem um CRUD de contatos, então queremos melhorá-lo.
+Observe que jÃ¡ tem um CRUD de contatos, entÃ£o queremos melhorÃ¡-lo.
 
-O que você faria para melhorá-lo?
-Como fazer uma alteração para incluir uma exclusão lógica nesse modelo?
-Quais padrões de projetos você identifica nesse projeto e quais você poderia implementar?
-Como incluir tratamento de exceção?
+O que vocÃª faria para melhorÃ¡-lo?
+Como fazer uma alteraÃ§Ã£o para incluir uma exclusÃ£o lÃ³gica nesse modelo?
+Quais padrÃµes de projetos vocÃª identifica nesse projeto e quais vocÃª poderia implementar?
+Como incluir tratamento de exceÃ§Ã£o?
 
-Você terá um total de 4 horas para implementar a solução. Não se preocupe com layout. O importante é o domínio das questões técnicas levantadas. Boa sorte! :)
+VocÃª terÃ¡ um total de 4 horas para implementar a soluÃ§Ã£o. NÃ£o se preocupe com layout. O importante Ã© o domÃ­nio das questÃµes tÃ©cnicas levantadas. Boa sorte! :)
+
 
  
-## ?? CLT
+## ğŸš€ CLT
 
-Esta é um exercício para testar seus conhecimentos básicos de PHP, MySQL e padrões de projeto. Sua tarefa consiste em:
-
-
-Criar uma tabela de usuários no banco de dados;
+Esta Ã© um exercÃ­cio para testar seus conhecimentos bÃ¡sicos de PHP, MySQL e padrÃµes de projeto. Sua tarefa consiste em:
 
 
-A tabela deve conter NOME, EMAIL, SENHA, ATIVO, DATA DE CRIAÇÃO e DATA DE ATUALIZAÇÃO;
+Criar uma tabela de usuÃ¡rios no banco de dados;
 
 
-Você deverá fazer o CRUD (Create, Read, Update e Delete) dessa tabela em questão;
+A tabela deve conter NOME, EMAIL, SENHA, ATIVO, DATA DE CRIAÃ‡ÃƒO e DATA DE ATUALIZAÃ‡ÃƒO;
+
+
+VocÃª deverÃ¡ fazer o CRUD (Create, Read, Update e Delete) dessa tabela em questÃ£o;
 
 
 Criar uma tabela de telefones no banco de dados;
 
 
-A tabela deve conter TELEFONE, ATIVO, DATA DE CRIAÇÃO e DATA DE ATUALIZAÇÃO;
+A tabela deve conter TELEFONE, ATIVO, DATA DE CRIAÃ‡ÃƒO e DATA DE ATUALIZAÃ‡ÃƒO;
 
 
-Altere o cadastro de contatos inicial para permitir que o usuário tenha vários números de telefone cadastrados;
+Altere o cadastro de contatos inicial para permitir que o usuÃ¡rio tenha vÃ¡rios nÃºmeros de telefone cadastrados;
 
 
-Bônus
+BÃ´nus
 
 
-Implemente um cadastro de múltiplos endereços para o usuário;
+Implemente um cadastro de mÃºltiplos endereÃ§os para o usuÃ¡rio;
 
 
 Esses cadastros devem buscar o CEP na api https://viacep.com.br/ e retornar os dados restante automaticamente.
 
 
-No cadastro de usuários, valide se já existe um email cadastrado igual ao que ele esteja cadastrando.
+No cadastro de usuÃ¡rios, valide se jÃ¡ existe um email cadastrado igual ao que ele esteja cadastrando.
 
 
-Observe que já tem um CRUD de contatos, então queremos melhorá-lo.
+Observe que jÃ¡ tem um CRUD de contatos, entÃ£o queremos melhorÃ¡-lo.
 
 
-O que você faria para melhorá-lo?
+O que vocÃª faria para melhorÃ¡-lo?
 
 
-Como fazer uma alteração para incluir uma exclusão lógica nesse modelo?
+Como fazer uma alteraÃ§Ã£o para incluir uma exclusÃ£o lÃ³gica nesse modelo?
 
 
-Quais padrões de projetos você identifica nesse projeto e quais você poderia implementar?
+Quais padrÃµes de projetos vocÃª identifica nesse projeto e quais vocÃª poderia implementar?
 
 
-Como incluir tratamento de exceção?
+Como incluir tratamento de exceÃ§Ã£o?
 
 
 Pode responder essas perguntas num .txt, colocar na pasta do projeto e commitar.
-Você terá um total de 4 horas para implementar a solução. Não se preocupe com layout. O importante é o domínio das questões técnicas levantadas. Que a força esteja com você! :)
+VocÃª terÃ¡ um total de 4 horas para implementar a soluÃ§Ã£o. NÃ£o se preocupe com layout. O importante Ã© o domÃ­nio das questÃµes tÃ©cnicas levantadas. Que a forÃ§a esteja com vocÃª! :)
 
+## â˜• InstruÃ§Ãµes Gerais
 
-## ? Instruções Gerais
-
-Segue instruções que irão lhe ajudar no teste:
+Segue instruÃ§Ãµes que irÃ£o lhe ajudar no teste:
 
 ```
-O código deverá ser colocado em seu Github;
+O cÃ³digo deverÃ¡ ser colocado em seu Github;
  
-Na pasta raiz do Github, deverá conter um arquivo chamado README.MD com instruções para que possamos executar o projeto em nosso computador;
+Na pasta raiz do Github, deverÃ¡ conter um arquivo chamado README.MD com instruÃ§Ãµes para que possamos executar o projeto em nosso computador;
  
-Caso você tenha alguma dificuldade em atender a todos os requisitos deste projeto, não se preocupe. O ideal é que você faça o máximo que conseguir. Se houver dificuldades, faça uma compilação das mesmas no README.MD para que possamos discutir na sua apresentação; 
+Caso vocÃª tenha alguma dificuldade em atender a todos os requisitos deste projeto, nÃ£o se preocupe. O ideal Ã© que vocÃª faÃ§a o mÃ¡ximo que conseguir. Se houver dificuldades, faÃ§a uma compilaÃ§Ã£o das mesmas no README.MD para que possamos discutir na sua apresentaÃ§Ã£o; 
 
-O mais importante é não deixar de enviar o projeto, mesmo que falte algum requisito;
+O mais importante Ã© nÃ£o deixar de enviar o projeto, mesmo que falte algum requisito;
 
- Você deverá enviar o link do repositório do github através de um e-mail;
+ VocÃª deverÃ¡ enviar o link do repositÃ³rio do github atravÃ©s de um e-mail;
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+Adicione comandos de execuÃ§Ã£o e exemplos que vocÃª acha que os usuÃ¡rios acharÃ£o Ãºteis. Fornece uma referÃªncia de opÃ§Ãµes para pontos de bÃ´nus!
 
-## ?? Alguns Critérios de Avaliação
+## ğŸ“« Alguns CritÃ©rios de AvaliaÃ§Ã£o
 Criatividade
 
-1. Código limpo 
-2. Qualidade, modularidade, legibilidade e organização do código
-3. Documentação do código
-4. Documentação do projeto (README.MD)
-5. Performance da aplicação
-6. Quantidade de funcionalidades básicas e extras
+1. CÃ³digo limpo 
+2. Qualidade, modularidade, legibilidade e organizaÃ§Ã£o do cÃ³digo
+3. DocumentaÃ§Ã£o do cÃ³digo
+4. DocumentaÃ§Ã£o do projeto (README.MD)
+5. Performance da aplicaÃ§Ã£o
+6. Quantidade de funcionalidades bÃ¡sicas e extras
 
-## ?? Tecnologias que você deverá utilizar
+## ğŸ¤ Tecnologias que vocÃª deverÃ¡ utilizar
 
 Frontend: HTML, CSS e Javascript ou ReactJS;<br>
 Backend:  <strong>Obrigatoriamente PHP;</strong>
 
-[? Voltar ao topo](#nome-do-projeto)<br>
+[â¬† Voltar ao topo](#nome-do-projeto)<br>
