@@ -32,7 +32,7 @@ Como fazer uma alteração para incluir uma exclusão lógica nesse modelo?
 Quais padrões de projetos você identifica nesse projeto e quais você poderia implementar?
 Como incluir tratamento de exceção?
 
-Você terá um total de 4 horas para implementar a solução. Não se preocupe com layout. O importante é o domínio das questões técnicas levantadas. Boa sorte! :)
+Você terá um total de 4 dias para implementar a solução. Não se preocupe com layout. O importante é o domínio das questões técnicas levantadas. Boa sorte! :)
 
 
  
@@ -87,7 +87,34 @@ Como incluir tratamento de exceção?
 
 
 Pode responder essas perguntas num .txt, colocar na pasta do projeto e commitar.
-Você terá um total de 4 horas para implementar a solução. Não se preocupe com layout. O importante é o domínio das questões técnicas levantadas. Que a força esteja com você! :)
+Você terá um total de 4 dias para implementar a solução. Não se preocupe com layout. O importante é o domínio das questões técnicas levantadas. Que a força esteja com você! :)
+
+## Lógica e Banco de dados
+
+1) Refatore o seguinte programa visando torná-lo mais legível, manutenível e reaproveitável.
+
+<img src="http://cmtech.com.br/recrutamento/imagens/questao_1.png" alt="">
+
+2) Corrija o programa abaixo para que ele imprima os dez primeiros múltiplos positivos de 4 e 5.
+
+<img src="http://cmtech.com.br/recrutamento/imagens/questao_2.png" alt="">
+
+3) Descreva detalhadamente o que o seguinte programa faz.
+
+<img src="http://cmtech.com.br/recrutamento/imagens/questao_3.png" alt="">
+
+
+<img src="http://cmtech.com.br/recrutamento/imagens/questao_4.png" alt="">
+
+
+<img src="http://cmtech.com.br/recrutamento/imagens/questao_5.png" alt="">
+
+
+<img src="http://cmtech.com.br/recrutamento/imagens/questao_6.png" alt="">
+
+
+<img src="http://cmtech.com.br/recrutamento/imagens/questao_7.png" alt="">
+
 
 ## ☕ Instruções Gerais
 
@@ -120,6 +147,6 @@ Criatividade
 ## 🤝 Tecnologias que você deverá utilizar
 
 Frontend: HTML, CSS e Javascript ou ReactJS;<br>
-Backend:  <strong>Obrigatoriamente PHP;</strong>
+Backend:  <strong>Obrigatoriamente PHP, de preferência usando o framework ScriptCase(https://www.scriptcase.com.br/);</strong>
 
 [⬆ Voltar ao topo](#nome-do-projeto)<br>
