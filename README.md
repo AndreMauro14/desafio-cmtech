@@ -105,15 +105,20 @@ Você terá um total de 4 dias para implementar a solução. Não se preocupe co
 
 # Responda as questões sobre banco de dados
 
+1) Questão um
+
 <img src="http://cmtech.com.br/recrutamento/imagens/questao_4.png" alt="">
 
 
+2) Questão dois
 <img src="http://cmtech.com.br/recrutamento/imagens/questao_5.png" alt="">
 
 
+3) Questão três
 <img src="http://cmtech.com.br/recrutamento/imagens/questao_6.png" alt="">
 
 
+4) Questão quatro
 <img src="http://cmtech.com.br/recrutamento/imagens/questao_7.png" alt="">
 
 
