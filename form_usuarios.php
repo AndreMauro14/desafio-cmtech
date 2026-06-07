@@ -20,9 +20,7 @@
             </div>
             <div class="form-group form-row">
                 <label class="col-sm-2 col-form-label text-right">Senha:</label>
-                <input type="password" class="form-control col-sm-8" name="senha" id="senha" value="<?php
-                echo isset($usuario->senha) ? $usuario->senha : null;
-                ?>" />
+                <input type="password" class="form-control col-sm-8" name="senha" id="senha" value=""/>
             </div>
             <div class="card-footer">
                 <input type="hidden" name="id" id="id" value="<?php echo isset($usuario->id) ? $usuario->id : null; ?>" />

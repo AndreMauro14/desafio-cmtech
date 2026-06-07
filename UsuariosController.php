@@ -53,7 +53,9 @@ class UsuariosController extends Controller
         $id                = (int) $dados['id'];
         $usuario           = Usuario::find($id);
         $usuario->nome     = $this->request->nome;
-        $usuario->senha    = password_hash($this->request->senha, PASSWORD_DEFAULT);
+        if (!empty($this->request->senha)) {
+            $usuario->senha    = password_hash($this->request->senha, PASSWORD_DEFAULT);
+        }
         $usuario->email    = $this->request->email;
         $usuario->save();
 
