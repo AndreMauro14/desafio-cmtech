@@ -4,7 +4,8 @@ create table contatos (
 id int unsigned auto_increment primary key,
 nome varchar(80) not null,
 telefone varchar(20) default null,
-email varchar(80) default null
+email varchar(80) default null,
+ativo boolean default true
 );
 
 create table usuarios (

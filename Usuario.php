@@ -86,13 +86,13 @@ class Usuario
         return $resultado;
     }
     /**
-     * Retorna uma lista de usuarios
+     * Retorna uma lista de usuarios ativos
      * @return array/boolean
      */
     public static function all()
     {
         $conexao = Conexao::getInstance();
-        $stmt    = $conexao->prepare("SELECT * FROM usuarios;");
+        $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE ativo=1;");
         $result  = array();
         if ($stmt->execute()) {
             while ($rs = $stmt->fetchObject(Usuario::class)) {
@@ -119,14 +119,14 @@ class Usuario
         return false;
     }
     /**
-     * Encontra um usuario pelo ID
+     * Encontra um usuario pelo ID (tem que estar ativo)
      * @param type $id
      * @return type
      */
     public static function find($id)
     {
         $conexao = Conexao::getInstance();
-        $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE id='{$id}';");
+        $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE id='{$id}' AND ativo=1;");
         if ($stmt->execute()) {
             if ($stmt->rowCount() > 0) {
                 $resultado = $stmt->fetchObject('Usuario');
@@ -138,14 +138,14 @@ class Usuario
         return false;
     }
     /**
-     * Destruir um usuario pelo ID
+     * Altera o usuario para inativo
      * @param type $id
      * @return boolean
      */
     public static function destroy($id)
     {
         $conexao = Conexao::getInstance();
-        if ($conexao->exec("DELETE FROM usuarios WHERE id='{$id}';")) {
+        if ($conexao->exec("UPDATE usuarios SET ativo=0 WHERE id='{$id}';")) {
             return true;
         }
         return false;
