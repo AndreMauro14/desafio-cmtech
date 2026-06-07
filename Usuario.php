@@ -26,7 +26,7 @@ class Usuario
     }
 
     /**
-     * Salvar o usuario
+     * Salva o usuario
      * @return boolean
      */
     public function save()
@@ -85,5 +85,69 @@ class Usuario
         }
         return $resultado;
     }
-}
+    /**
+     * Retorna uma lista de usuarios
+     * @return array/boolean
+     */
+    public static function all()
+    {
+        $conexao = Conexao::getInstance();
+        $stmt    = $conexao->prepare("SELECT * FROM usuarios;");
+        $result  = array();
+        if ($stmt->execute()) {
+            while ($rs = $stmt->fetchObject(Usuario::class)) {
+                $result[] = $rs;
+            }
+        }
+        if (count($result) > 0) {
+            return $result;
+        }
+        return false;
+    }
 
+    /**
+     * Retornar o número de registros
+     * @return int/boolean
+     */
+    public static function count()
+    {
+        $conexao = Conexao::getInstance();
+        $count   = $conexao->exec("SELECT count(*) FROM usuarios;");
+        if ($count) {
+            return (int) $count;
+        }
+        return false;
+    }
+    /**
+     * Encontra um usuario pelo ID
+     * @param type $id
+     * @return type
+     */
+    public static function find($id)
+    {
+        $conexao = Conexao::getInstance();
+        $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE id='{$id}';");
+        if ($stmt->execute()) {
+            if ($stmt->rowCount() > 0) {
+                $resultado = $stmt->fetchObject('Usuario');
+                if ($resultado) {
+                    return $resultado;
+                }
+            }
+        }
+        return false;
+    }
+    /**
+     * Destruir um usuario pelo ID
+     * @param type $id
+     * @return boolean
+     */
+    public static function destroy($id)
+    {
+        $conexao = Conexao::getInstance();
+        if ($conexao->exec("DELETE FROM usuarios WHERE id='{$id}';")) {
+            return true;
+        }
+        return false;
+    }
+}
