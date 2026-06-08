@@ -41,10 +41,9 @@ spl_autoload_register(function($class) {
         } else {
             echo '<h1>Contatos</h1><hr><div class="container">';
             echo 'Bem-vindo ao aplicativo MVC Contatos! <br /><br />';
-            echo '<a href="?controller=ContatosController&method=listar" class="btn btn-success">Vamos Começar!</a></div>';
+            echo '<a href="?controller=ContatosController&method=listar" class="btn btn-success">Ver Contatos</a>';
+            echo '<a href="?controller=UsuariosController&method=listar" class="btn btn-success">Ver Usuários</a></div>';
         }
-        ?>
-
-
+?>
     </body>
 </html>
