@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="?controller=UsuariosController&<?php echo isset($usuario->id) ? "method=atualizar&id={$usuario->id}" : "method=salvar"; ?>" method="post" >
+    <form action="?controller=UsuariosController&<?php echo isset($usuario->id) ? "method=atualizar&id={$usuario->id}" : "method=salvar"; ?>" method="post" onsubmit="return validar()">
         <div class="card" style="top:40px">
             <div class="card-header">
                 <span class="card-title">Usuarios</span>
@@ -30,4 +30,15 @@
             </div>
         </div>
     </form>
+    <script>
+        function validar() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            if (nome === '' || email === '') {
+                alert('Preencha todos os campos obrigatórios!');
+                return false;
+            }
+            return true;
+        }
+</script>
 </div>
