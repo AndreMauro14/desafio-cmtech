@@ -45,13 +45,17 @@ class Usuario
             }
             $query = "UPDATE usuarios SET ".implode(', ', $definir)." WHERE id='{$this->id}';";
         }
-        if ($conexao = Conexao::getInstance()) {
-            $stmt = $conexao->prepare($query);
-            if ($stmt->execute()) {
-                return $stmt->rowCount();
+        try {
+            if ($conexao = Conexao::getInstance()) {
+                $stmt = $conexao->prepare($query);
+                if ($stmt->execute()) {
+                    return $stmt->rowCount();
+                }
             }
+            return false;
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
-        return false;
     }
     /**
      * Tornar valores aceitos para sintaxe SQL
@@ -91,13 +95,17 @@ class Usuario
      */
     public static function all()
     {
-        $conexao = Conexao::getInstance();
-        $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE ativo=1;");
-        $result  = array();
-        if ($stmt->execute()) {
-            while ($rs = $stmt->fetchObject(Usuario::class)) {
-                $result[] = $rs;
+        try {
+            $conexao = Conexao::getInstance();
+            $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE ativo=1;");
+            $result  = array();
+            if ($stmt->execute()) {
+                while ($rs = $stmt->fetchObject(Usuario::class)) {
+                    $result[] = $rs;
+                }
             }
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
         if (count($result) > 0) {
             return $result;
@@ -111,10 +119,14 @@ class Usuario
      */
     public static function count()
     {
-        $conexao = Conexao::getInstance();
-        $count   = $conexao->exec("SELECT count(*) FROM usuarios;");
-        if ($count) {
-            return (int) $count;
+        try {
+            $conexao = Conexao::getInstance();
+            $count   = $conexao->exec("SELECT count(*) FROM usuarios;");
+            if ($count) {
+                return (int) $count;
+            }
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
         return false;
     }
@@ -125,15 +137,19 @@ class Usuario
      */
     public static function find($id)
     {
-        $conexao = Conexao::getInstance();
-        $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE id='{$id}' AND ativo=1;");
-        if ($stmt->execute()) {
-            if ($stmt->rowCount() > 0) {
-                $resultado = $stmt->fetchObject('Usuario');
-                if ($resultado) {
-                    return $resultado;
+        try {
+            $conexao = Conexao::getInstance();
+            $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE id='{$id}' AND ativo=1;");
+            if ($stmt->execute()) {
+                if ($stmt->rowCount() > 0) {
+                    $resultado = $stmt->fetchObject('Usuario');
+                    if ($resultado) {
+                        return $resultado;
+                    }
                 }
             }
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
         return false;
     }
@@ -144,10 +160,15 @@ class Usuario
      */
     public static function destroy($id)
     {
-        $conexao = Conexao::getInstance();
-        if ($conexao->exec("UPDATE usuarios SET ativo=0 WHERE id='{$id}';")) {
-            return true;
+        try{
+            $conexao = Conexao::getInstance();
+            if ($conexao->exec("UPDATE usuarios SET ativo=0 WHERE id='{$id}';")) {
+             return true;
+            }
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
+        
         return false;
     }
 }
