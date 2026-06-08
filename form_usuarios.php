@@ -25,7 +25,7 @@
             <div class="card-footer">
                 <input type="hidden" name="id" id="id" value="<?php echo isset($usuario->id) ? $usuario->id : null; ?>" />
                 <button class="btn btn-success" type="submit">Salvar</button>
-                <button class="btn btn-secondary">Limpar</button>
+                <button class="btn btn-secondary" type="button" onclick="document.querySelectorAll('input:not([type=hidden])').forEach(i => i.value = '')">Limpar</button>
                 <a class="btn btn-danger" href="?controller=UsuariosController&method=listar">Cancelar</a>
             </div>
         </div>
