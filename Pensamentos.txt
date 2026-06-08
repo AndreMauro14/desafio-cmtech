@@ -1,0 +1,48 @@
+Li o código e analisei que se parece bastante com Java, a ideia de construtores, get e set.
+Precisei entender como funciona o isset, mas ele funciona como uma espécie de verificação:
+eu peço para ele verificar se o valor que está indo para o atributo está vazio ou não.
+
+Sobre o padrão de como digitei e pensei em fazer, foi lendo, entendendo e me adaptando
+com o código enviado no GitLab estava construído. Um dos exemplos que tive que seguir 
+foi quando eu fui criar o arquivo Usuario.php. Por eu vir de Java, e lá a gente precisa 
+colocar os atributos todos como private antes de criar qualquer get e set, porque eu tenho 
+que criar um para cada atributo. No PHP já foi algo mais geral, o $atributos já cobria tudo
+isso, e acredito que entender isso facilitou muito no desafio técnico.
+
+
+No método save() do model Usuario.php eu tive que me adaptar também à base que estava anterior do projeto.
+No Java eu iria criar 2 métodos separados, um para salvar e outro para atualizar. No PHP, lendo o Contato.php,
+eu entendi que o método save já faz o update com uma verificação para ver se o usuário já tem um ID. Se não tiver,
+é um usuário novo; se tiver, o método save seria usado para uma alteração, ou seja, update. Também notei alguns métodos auxiliares 
+como preparar e escapar que, seguindo a lógica de ser coerente à arquitetura do projeto, também coloquei na classe Usuario.php.
+ Achei muito interessante essa parte de métodos auxiliares nessa parte do código em específico, acho que facilita muito a leitura e entendimento do código no geral.
+
+
+Os 2 commits de fix eu commitei o resto que faltava dos arquivos que tinha commitado antes, eu esqueci de dar Ctrl+S.
+
+
+Em form_usuarios.php eu coloquei type=password no campo de senha para não mostrar a senha sendo digitada, sendo escondida por "**********".
+
+
+Padrões (design pattern) que identifiquei no código:
+
+Singleton Pattern (no arquivo Conexao.php ele deixa claro que vai ser a mesma instância de conexão).
+
+Padrão MVC (usei no meu código também).
+
+Active Record (o objeto Contato e Usuario se salvam sozinhos no banco). No Java eu teria que fazer um DAO e um Repository para salvar o objeto no banco de dados.
+
+Front Controller (em index.php o front recebe todas as requisições e decide para qual controller mandar).
+
+
+Identifiquei que a senha iria ser "hasheada" mais de 1 vez por conta de form_usuarios e UsuariosController.
+Quando eu fosse editar a senha, o controller recebia do form_usuarios e fazia hash de novo. O bug estava na passagem entre os dois.
+
+
+Implementei tratamento de exceções com try/catch nos models e na Conexão, envolvendo todas as operações que conversam com o banco de dados.
+Se o banco cair ou uma query falhar, o sistema captura o erro com PDOException em vez de quebrar a tela para o usuário.
+
+
+Sobre o HTML e JavaScript, eu implementei nos arquivos forms, grade e index. Não vi necessidade de criar um arquivo novo só para JS, 
+sendo que eu poderia adicionar no HTML como um script, que funcionaria perfeitamente e ainda se manteria o Clean Code. 
+Com o JS fiz validações para notificar o usuário quando ele faz alguma besteira, exemplo: deixar campos vazios.

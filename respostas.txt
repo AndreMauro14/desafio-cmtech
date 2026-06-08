@@ -1,0 +1,30 @@
+1. O que você faria para melhorar o CRUD de contatos?
+Acredito que o que já tinha para melhorar eu consegui fazer: tratamento de exceções, validação de campos vazios,
+confirmação antes de excluir e exclusão lógica. Uma melhoria a ser pensada é no frontend, dar feedbacks para o usuário
+com balões pop-ups dizendo se alguma ação que o usuário tentou deu certo ou não.
+
+
+2. Como fazer uma alteração para incluir uma exclusão lógica nesse modelo?
+Implementei a exclusão lógica de acordo com a solicitação. Adicionei um campo no banco de dados para informar se o usuário está ativo ou não.
+No método destroy(), troquei o DELETE por UPDATE SET ativo=0, e nos métodos all() e find() adicionei WHERE ativo=1 para filtrar apenas os registros ativos.
+Dessa forma, o registro não é apagado permanentemente do banco, apenas desativado.
+
+
+3. Quais padrões de projetos você identifica nesse projeto e quais você poderia implementar?
+O que a gente percebe de cara é o design pattern MVC, onde cada parte do projeto tem sua função específica:
+as Views são onde o usuário vê o que ele está pedindo para ser executado,
+os Controllers são onde essas requisições do usuário vão parar,
+e os Models são as interações por baixo dos panos que executam quando um usuário pede algo.
+Exemplo: eu quero ver todos os usuários, vai ser executada uma busca no banco de dados buscando todos os usuários.
+Active Record, onde os Models conseguem se salvar no banco de dados sozinhos sem precisar de um DAO ou Repository igual no Java.
+Front Controller, onde o index.php recebe todas as requisições e decide para qual Controller deve mandar.
+Singleton Pattern (no arquivo Conexao.php ele deixa claro que vai ser a mesma instância de conexão). Vai ser sempre a mesma conexão para o banco de dados, não muda.
+
+Um padrão que eu poderia implementar seria o Repository, separando a lógica de acesso ao banco de dados em uma classe própria, como eu fazia no Java com DAO e Repository.
+No projeto atual, o model faz tudo (Active Record), mas com Repository ficaria mais organizado e testável.
+
+
+4. Como incluir tratamento de exceção?
+Os tratamentos de exceções devem ser colocados em partes onde possivelmente o código pode quebrar por algum erro. Exemplo: a conexão com o banco de dados pode falhar,
+e sem conexão nada vai funcionar. Com o tratamento de exceções, a gente consegue identificar qual foi o problema, notificar o usuário sobre o que aconteceu, 
+tudo isso sem o código simplesmente morrer e fechar tudo. Outro exemplo também pode ser alguma query de SQL escrita errada, que pode matar o código de vez sem tratamento de exceções.
