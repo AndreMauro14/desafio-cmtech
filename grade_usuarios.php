@@ -19,7 +19,7 @@
                         <td><?php echo $usuario->email; ?></td>
                         <td>
                             <a href="?controller=UsuariosController&method=editar&id=<?php echo $usuario->id; ?>" class="btn btn-primary btn-sm">Editar</a>
-                            <a href="?controller=UsuariosController&method=excluir&id=<?php echo $usuario->id; ?>" class="btn btn-danger btn-sm">Excluir</a>
+                            <a href="?controller=UsuariosController&method=excluir&id=<?php echo $usuario->id; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Você deseja excluir este usuário?')">Excluir</a>
                         </td>
                     </tr>
                     <?php

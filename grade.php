@@ -21,7 +21,7 @@
                         <td><?php echo $contato->email; ?></td>
                         <td>
                             <a href="?controller=ContatosController&method=editar&id=<?php echo $contato->id; ?>" class="btn btn-primary btn-sm">Editar</a>
-                            <a href="?controller=ContatosController&method=excluir&id=<?php echo $contato->id; ?>" class="btn btn-danger btn-sm">Excluir</a>
+                            <a href="?controller=ContatosController&method=excluir&id=<?php echo $contato->id; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Você deseja excluir este contato?')">Excluir</a>
                         </td>
                     </tr>
                     <?php
