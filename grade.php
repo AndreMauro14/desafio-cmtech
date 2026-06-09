@@ -29,7 +29,7 @@
             } else {
                 ?>
                 <tr>
-                    <td colspan="5">Nenhum registro encontrado</td>
+                    <td colspan="4">Nenhum registro encontrado</td>
                 </tr>
                 <?php
             }
