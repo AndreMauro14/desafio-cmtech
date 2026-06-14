@@ -1,3 +1,4 @@
+<a href="/" class="btn btn-secondary btn-sm">Voltar para Home</a>
 <h1>Contatos</h1>
 <hr>
 <div class="container">

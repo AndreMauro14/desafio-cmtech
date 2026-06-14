@@ -1,3 +1,4 @@
+<a href="/" class="btn btn-secondary btn-sm">Voltar para Home</a>
 <div class="container">
     <form action="?controller=ContatosController&<?php echo isset($contato->id) ? "method=atualizar&id={$contato->id}" : "method=salvar"; ?>" method="post" onsubmit="return validar()">
         <div class="card" style="top:40px">
