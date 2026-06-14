@@ -46,3 +46,6 @@ Se o banco cair ou uma query falhar, o sistema captura o erro com PDOException e
 Sobre o HTML e JavaScript, eu implementei nos arquivos forms, grade e index. Não vi necessidade de criar um arquivo novo só para JS, 
 sendo que eu poderia adicionar no HTML como um script, que funcionaria perfeitamente e ainda se manteria o Clean Code. 
 Com o JS fiz validações para notificar o usuário quando ele faz alguma besteira, exemplo: deixar campos vazios.
+
+Estava estudando mais sobre o PHP e notei um erro de segurança no código envolvendo PreparedStatement onde eu tinha
+que adicionar placeholders nas querys de SQL pra evitar SQL injection.
