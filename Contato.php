@@ -144,8 +144,8 @@ class Contato
     {
         try {
              $conexao = Conexao::getInstance();
-             $stmt    = $conexao->prepare("SELECT * FROM contatos WHERE id='{$id}' AND ativo=1;");
-             if ($stmt->execute()) {
+             $stmt    = $conexao->prepare("SELECT * FROM contatos WHERE id= ? AND ativo=1;");
+             if ($stmt->execute([$id])) {
                  if ($stmt->rowCount() > 0) {
                      $resultado = $stmt->fetchObject('Contato');
                      if ($resultado) {
@@ -168,7 +168,8 @@ class Contato
     {
         try {
             $conexao = Conexao::getInstance();
-            if ($conexao->exec("UPDATE contatos SET ativo=0 WHERE id='{$id}';")) {
+            $stmt = $conexao->prepare("UPDATE contatos SET ativo=0 WHERE id= ?;");
+            if ($stmt->execute([$id])) {
                 return true;
             }
         } catch (\PDOException $e) {

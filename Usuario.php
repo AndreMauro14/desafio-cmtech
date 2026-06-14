@@ -139,8 +139,8 @@ class Usuario
     {
         try {
             $conexao = Conexao::getInstance();
-            $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE id='{$id}' AND ativo=1;");
-            if ($stmt->execute()) {
+            $stmt    = $conexao->prepare("SELECT * FROM usuarios WHERE id= ? AND ativo=1;");
+            if ($stmt->execute([$id])) {
                 if ($stmt->rowCount() > 0) {
                     $resultado = $stmt->fetchObject('Usuario');
                     if ($resultado) {
@@ -162,8 +162,9 @@ class Usuario
     {
         try{
             $conexao = Conexao::getInstance();
-            if ($conexao->exec("UPDATE usuarios SET ativo=0 WHERE id='{$id}';")) {
-             return true;
+            $stmt = $conexao->prepare("UPDATE usuarios SET ativo=0 WHERE id= ?;");
+            if ($stmt->execute([$id])) {
+                return true;
             }
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());

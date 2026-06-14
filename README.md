@@ -70,3 +70,4 @@ php -S localhost:8000
 - Validação de campos obrigatórios com JavaScript
 - Confirmação antes de excluir com JavaScript
 - Link de navegação para Usuários na página inicial
+- Prepared statements para prevenção de SQL injection nos métodos find() e destroy()
